@@ -9,7 +9,7 @@ import { useForm } from 'react-hook-form';
 import { Toast } from 'primereact/toast';
 import { ConfirmDialog, confirmDialog } from 'primereact/confirmdialog';
 
-const PageUsers = () => {
+const PageUsersContainer = () => {
     const [visibleCreate, setVisibleCreate] = useState(false);
     const [visibleEdit, setVisibleEdit] = useState(false);
     const { data: usuarios, isLoading } = useGetUsers();
@@ -20,6 +20,7 @@ const PageUsers = () => {
     const toast = useRef();
     
     const popup = (user_id) => {
+      
         confirmDialog({
             header: "Aviso: ",
             message: "Tem certeza que deseja deletar este item?",
@@ -49,6 +50,15 @@ const PageUsers = () => {
     }
 
     const createUser = (data) => {
+        // Verificar se todos os campos obrigatórios estão preenchidos
+        // if (nome && email && senha) {
+        //     // Aqui você poderia implementar a lógica para enviar o pedido
+        //     alert("Cadastro enviado com sucesso.");
+           
+        // } else {
+        //     alert("Por favor, preencha todos os campos obrigatórios.");
+        // }
+     
         criarUsuario(data, {
             onSuccess: () => {
                 setVisibleCreate(false);
@@ -59,6 +69,7 @@ const PageUsers = () => {
                     life: 3000 
                 });
             },
+            
             onError: () => {
                 setVisibleCreate(false);
                 toast.current.show({ 
@@ -179,4 +190,4 @@ const PageUsers = () => {
     )
 }
 
-export default PageUsers;
+export default PageUsersContainer;

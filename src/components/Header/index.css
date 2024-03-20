@@ -1,0 +1,113 @@
+header .acoes{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header .acoes a{
+    display: block;
+    line-height: 40px;
+    color: #474747;
+    font-size: 14px;
+}
+
+header .acoes a.underlined{
+    text-decoration: underline;
+}
+
+header .acoes a.btn{
+    background-color: var(--pink);
+    padding: 0 26px;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+header .acoes .carrinho{
+    position: relative;
+}
+
+header .acoes .carrinho span{
+    background-color: var(--red);
+    font-size: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top: -4px;
+    left: 16px;
+    line-height: 16px;
+    padding: 0 4px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+header nav{
+    width: 100%;
+    margin-top: 30px;
+}
+
+header nav ul{
+    display: flex;
+    gap: 32px;
+}
+
+header nav a{
+    color: #474747;
+    line-height: 26px;
+    display: block;
+}
+
+header nav a:hover{
+    color: var(--pink);
+}
+
+header nav a.active{
+    color: var(--pink);
+    font-weight: bold;
+    border-bottom: 3px solid var(--pink);
+}
+
+header .acoes h3{
+    font-size: 16px;
+    text-align: right;
+}
+
+header .acoes h3 span{
+    display: block;
+    font-size: 14px;
+    color: #777777;
+    transition-duration: 200ms;
+    cursor: pointer;
+}
+
+header .acoes h3 span:hover{
+    color: var(--pink);
+}
+
+@media only screen and ( max-width: 480px ) {
+
+    header{
+        gap: 0;
+        padding: 20px;
+    }
+
+    header .menu{
+        display: block;
+    }
+
+    header .logo{
+        font-size: 20px;
+        flex: 1;
+        justify-content: center;
+    }
+
+    header .logo-icon{
+        width: 18px;
+        height: 18px;
+    }
+
+    header .acoes a{
+        display: none;
+    }
+
+}

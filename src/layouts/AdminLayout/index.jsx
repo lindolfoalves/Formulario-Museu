@@ -6,6 +6,7 @@ const AdminLayout = () => {
         <div className={'flex w-full h-screen'}>
             <HeaderAdmin />
             <main className={'w-full p-6'}>
+                
                 <Outlet />
             </main>
         </div>
